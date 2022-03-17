@@ -8,9 +8,6 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["Visualizacao/CadastroDeVeciulos.Visualizacao/CadastroDeVeciulos.Visualizacao.csproj", "Visualizacao/CadastroDeVeciulos.Visualizacao/"]
-COPY ["Core/Dominio/CadastroVeiculo.Aplicacao/CadastroVeiculo.Aplicacao.csproj", "Core/Dominio/CadastroVeiculo.Aplicacao/"]
-COPY ["CadastroDeVeiculo.Dominio/CadastroDeVeiculo.Dominio.csproj", "CadastroDeVeiculo.Dominio/"]
-COPY ["CadastroDeVeiculo.Data/CadastroDeVeiculo.Data.csproj", "CadastroDeVeiculo.Data/"]
 RUN dotnet restore "Visualizacao/CadastroDeVeciulos.Visualizacao/CadastroDeVeciulos.Visualizacao.csproj"
 COPY . .
 WORKDIR "/src/Visualizacao/CadastroDeVeciulos.Visualizacao"

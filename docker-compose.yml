@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+    cadastrodeveciulos.visualizacao:
+        image: ${DOCKER_REGISTRY-}cadastrodeveciulosvisualizacao
+        build:
+          context: .
+          dockerfile: Visualizacao/CadastroDeVeciulos.Visualizacao/Dockerfile
+
+
+    veiculoContainer:
+        image: postgres
+
+volumes:
+    veiculo_volume:

@@ -22,6 +22,8 @@ namespace CadastroDeVeiculo.Data.Contexto
         public Banco(DbContextOptions<Banco> options) : base(options)
         {
             NpgsqlConnection.GlobalTypeMapper.MapEnum<EStatus>();
+
+            Database.Migrate();
         }
 
         public DbSet<Proprietario> Proprietarios { get; set; }
